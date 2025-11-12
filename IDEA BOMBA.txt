@@ -1,0 +1,23 @@
+Estoy aquí, revisando mi implementación inicial del sistema de pedidos. El Proyecto BRIDGES necesita ser robusto, y aunque la solución actual funciona, sé que debo prepararme para el volumen real de la UCA.
+
+El Salto a Quick Sort: De O(n²) a O(n log n)
+
+Ahora mismo, utilizo la ordenación por inserción para organizar los pedidos en mi arreglo. Es simple de implementar, pero es ineficiente; tiene una complejidad de O(n²) en el peor de los casos. Si el número de pedidos (n) se vuelve grande, el tiempo de procesamiento se disparará.
+
+Necesito migrar a Quick Sort. Elijo Quick Sort porque es uno de los algoritmos de ordenación más rápidos en el promedio, alcanzando O(n log n). Esto lo consigo utilizando la técnica de "Divide y Vencerás", particionando el arreglo alrededor de un pivote.
+
+La implementación en Java será naturalmente recursiva. La función de ordenación se llama a sí misma para procesar los sub-arreglos a izquierda y derecha del pivote, y eso me da un código muy limpio y potente. La recursividad es la herramienta ideal para manejar esa división constante del problema.
+
+Añadiendo Búsqueda Binaria
+
+Una vez que migre a Quick Sort, mis pedidos siempre estarán en un estado ordenado. Esto me abre la puerta para incluir inmediatamente la búsqueda binaria.
+
+Actualmente, buscar un pedido requiere una búsqueda lineal, O(n). Con la lista ordenada, la búsqueda binaria me permite encontrar cualquier pedido en un tiempo de O(log n). En lugar de revisar cada pedido, descarto la mitad del espacio de búsqueda con una sola comparación. Para un porter que necesita encontrar su siguiente destino rápidamente, esta es una mejora crítica.
+
+La Entrega: El Laberinto y la Recursividad Aplicada
+
+Me gusta mucho la idea de modelar la entrega física del pedido a través de un mini-juego de laberinto. Esto simula el viaje y la navegación difícil.
+
+Para resolver este laberinto y, por lo tanto, marcar el pedido como entregado, la recursividad es la clave. Voy a implementar una función que intente moverse desde la posición inicial del porter a la celda de destino.
+
+El algoritmo recursivo explorará las direcciones adyacentes. Si se encuentra un camino bloqueado o ya visitado, la función automáticamente realiza un backtracking (regresa) para probar la siguiente opción. No estoy usando backtracking para la gestión de pedidos en sí, pero la resolución del laberinto es un problema clásico que se resuelve con esa técnica recursiva. Cuando la función finalmente encuentra la salida, puedo ejecutar mi lógica: el pedido se ha entregado exitosamente.
