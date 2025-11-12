@@ -2,15 +2,15 @@ public class BackTraking {
 
 
     public static boolean resolverLaberinto(int[][] lab, int x, int y, int salidaX, int salidaY) {
-        // 1 = camino libre
-        // 0 = pared
-        // 2 = visitado
-        // Si llegamos a la salida → caso base
+        // 1 = camino sin usar
+        // 0 = muro
+        // 2 = ya visitado
+        // Si llegamos a la salida se convierte en caso base
         if (x == salidaX && y == salidaY) {
             return true;
         }
 
-        // Verificar si la posición es válida
+        // Verificar si la posición a elegir es válida
         if (!esValido(lab, x, y)) {
             return false;
         }
@@ -18,16 +18,16 @@ public class BackTraking {
         // Marcar como visitado
         lab[x][y] = 2;
 
-        // Intentar moverse ↑
+        // Intentar moverse arriba
         if (resolverLaberinto(lab, x - 1, y, salidaX, salidaY)) return true;
 
-        // Intentar moverse ↓
+        // Intentar moverse abajo
         if (resolverLaberinto(lab, x + 1, y, salidaX, salidaY)) return true;
 
-        // Intentar moverse ←
+        // Intentar moverse izquierda
         if (resolverLaberinto(lab, x, y - 1, salidaX, salidaY)) return true;
 
-        // Intentar moverse →
+        // Intentar moverse derecha
         if (resolverLaberinto(lab, x, y + 1, salidaX, salidaY)) return true;
 
         // Si ninguna dirección funcionó → backtracking
@@ -58,3 +58,4 @@ public class BackTraking {
         System.out.println("¿Se encontró camino? " + camino);
     }
 }
+
