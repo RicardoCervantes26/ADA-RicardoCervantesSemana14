@@ -1,4 +1,3 @@
-Estoy aquí, revisando mi implementación inicial del sistema de pedidos. El Proyecto BRIDGES necesita ser robusto, y aunque la solución actual funciona, sé que debo prepararme para el volumen real de la UCA.
 
 El Salto a Quick Sort: De O(n²) a O(n log n)
 
@@ -19,5 +18,6 @@ La Entrega: El Laberinto y la Recursividad Aplicada
 Me gusta mucho la idea de modelar la entrega física del pedido a través de un mini-juego de laberinto. Esto simula el viaje y la navegación difícil.
 
 Para resolver este laberinto y, por lo tanto, marcar el pedido como entregado, la recursividad es la clave. Voy a implementar una función que intente moverse desde la posición inicial del porter a la celda de destino.
+
 
 El algoritmo recursivo explorará las direcciones adyacentes. Si se encuentra un camino bloqueado o ya visitado, la función automáticamente realiza un backtracking (regresa) para probar la siguiente opción. No estoy usando backtracking para la gestión de pedidos en sí, pero la resolución del laberinto es un problema clásico que se resuelve con esa técnica recursiva. Cuando la función finalmente encuentra la salida, puedo ejecutar mi lógica: el pedido se ha entregado exitosamente.
