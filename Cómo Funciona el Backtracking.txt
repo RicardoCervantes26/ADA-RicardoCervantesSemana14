@@ -1,0 +1,26 @@
+Cómo Funciona el Backtracking?
+
+La lógica es sencilla: construyo una solución parcial paso a paso y la voy expandiendo. Pienso en ello como explorar un árbol de posibles soluciones:
+
+Avanzo: Tomo una opción y sigo adelante.
+
+Verifico: Si en algún momento me doy cuenta de que el camino que tomé es inválido o sé que no puede llevarme a una solución completa, me detengo.
+
+Retrocedo (Backtrack): En lugar de seguir ese camino inútil, el algoritmo "retrocede" o se da la vuelta, deshaciendo el paso anterior, y prueba una opción diferente.
+
+Este proceso de exploración y retroceso me permite explorar sistemáticamente todas las posibilidades, pero de una manera inteligente, sin perder tiempo en caminos que no funcionan.
+
+El Backtracking en la Selección Óptima
+
+La Selección Óptima se refiere al desafío de encontrar la mejor solución posible entre todas las soluciones viables que pueda tener un problema. El Backtracking es una herramienta que puedo usar para este fin, ya que su naturaleza de exploración exhaustiva garantiza que, en teoría, la mejor solución será encontrada.
+
+Un ejemplo clásico de un problema de selección óptima donde se aplica el backtracking es el Problema de la Mochila (Knapsack Problem):
+
+El Problema: Tengo una mochila con un límite de peso, y tengo una lista de objetos, cada uno con un peso y un valor. Mi objetivo es elegir qué objetos meter para que el valor total sea el máximo posible sin pasarme del límite de peso.
+
+La Aplicación de Backtracking: Para cada objeto, el algoritmo evalúa dos opciones principales:
+
+Incluir el objeto en la mochila.
+
+Excluir el objeto de la mochila.
+En cada paso, se comparan estas dos decisiones y se elige la opción que maximice el valor total restante.
