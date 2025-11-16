@@ -5,7 +5,7 @@ public class BackTraking {
         // 0 = pared
         // 2 = visitado
         // 3 = camino solución
-        // Si llegamos a la salida → caso base
+        // Si se  llega a la salida →se llega al caso base
         if (x == salidaX && y == salidaY) {
             lab[x][y] = 3; // Marcamos la salida como parte del camino solución
             return true;
@@ -126,4 +126,5 @@ public class BackTraking {
 
         imprimirLaberinto(laberinto);
     }
+
 }
