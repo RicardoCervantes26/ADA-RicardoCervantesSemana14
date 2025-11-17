@@ -25,7 +25,7 @@ public class BackTraking {
             return true;
         }
 
-        // Intentar moverse ↓
+        // Un jbtebtk de moverse 
         if (resolverLaberinto(lab, x + 1, y, salidaX, salidaY)) {
             lab[x][y] = 3; // Marcar como parte del camino solución
             return true;
@@ -128,3 +128,4 @@ public class BackTraking {
     }
 
 }
+
